@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第三次考核作业</title>
+</head>
+<style>
+    .top {
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        height: 90px;
+        background-color: #F5AA02;
+    }
+
+    .search {
+        position: absolute;
+        top: 35px;
+        width: 150px;
+        height: 30px;
+        left: 830px;
+        border-radius: 20px;
+        border: 2px solid #01abc7;
+    }
+
+    .input {
+        float: left;
+        width: 96px;
+        height: 22px;
+        border: none;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        background-color: #F5AA02;
+        left: 925px;
+    }
+
+    .input1 {
+        float: left;
+        position: absolute;
+        left: 100px;
+        width: 50px;
+        height: 30px;
+        color: white;
+        background-color: #01ACB7;
+        border: none;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        cursor: pointer;
+
+    }
+
+
+
+    .container {
+        background-color: #01ACB7;
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        top: 90px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav1 {
+        list-style: none;
+        display: flex;
+        width: 100%;
+    }
+
+    .nav1>li {
+        width: 100px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        flex: 1;
+    }
+
+    .nav2>li {
+        height: 0;
+        background-color: #01ACB7;
+        overflow: hidden;
+
+        transition: 1s;
+
+    }
+
+    .nav1>li:hover .nav2>li {
+
+        height: 50px;
+    }
+
+    .nav1>li:hover {
+        background-color: #01ACB7;
+        height: 50px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+    }
+
+
+    .width {
+        width: 100%;
+    }
+
+    .box {
+        top: 140px;
+        width: 100%;
+        height: 400px;
+        margin: auto;
+        position: relative;
+        overflow: hidden;
+        background-repeat: no-repeat;
+
+
+
+        .next {
+            opacity: 0;
+            display: inline-block;
+            cursor: pointer;
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            top: 50%;
+            color: #d2d0d0;
+            z-index: 33;
+            text-align: center;
+            font-size: 40px;
+            transform: translateY(-25px);
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 0 25% 25% 0;
+        }
+
+
+        .next {
+            right: 0;
+            border-radius: 25% 0 0 25%;
+        }
+
+
+        .images {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1000%;
+
+            li {
+                list-style: none;
+                float: left;
+
+                img {
+                    width: 1420px;
+                    height: 400px;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+
+        .dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            height: 13px;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, .3);
+            border-radius: 7px;
+            display: flex;
+
+            li {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                border-color: white;
+                background-color: rgb(0, 0, 0, 0.2);
+                margin: 2px 5px;
+                cursor: pointer;
+            }
+
+            .active {
+                background-color: rgb(247, 243, 243);
+            }
+        }
+    }
+
+    .box:hover .prev,
+    .box:hover .next {
+        opacity: 1;
+    }
+
+    .box .prev:hover,
+    .box .next:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+</style>
+
+</style>
+<style type="text/css">
+    .selected {
+        float: left;
+        width: 198px;
+        text-align: center;
+        background-color: #d45d18;
+        cursor: pointer;
+        border: 1px solid white;
+    }
+
+    .unselect {
+        float: left;
+        width: 198px;
+        text-align: center;
+        background-color: #F5AA02;
+        cursor: pointer;
+        border: 1px solid white;
+    }
+</style>
+<style>
+    #box1 {
+        position: relative;
+        top: 85px;
+
+        left: 500px;
+        width: 300px;
+        height: 200px;
+        border: 1px solid rgb(253, 253, 253);
+        margin-top: 60px;
+    }
+
+    #box1-1 {
+        position: absolute;
+    }
+
+
+    #img1 {
+        width: 300px;
+    }
+
+
+    #box1-2 {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        left: 50%;
+        top: 200px;
+        margin-left: -210px;
+    }
+
+    .btn {
+        width: 67px;
+        height: 50px;
+        border: 1px solid rgb(251, 249, 249);
+        margin-left: 5px;
+        margin-right: 5px;
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .img2 {
+        width: 72px;
+        position: absolute;
+        left: 50%;
+        margin-left: -36px;
+    }
+
+    .btn0 {
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        text-align: center;
+        line-height: 70px;
+    }
+
+    span {
+        color: rgb(252, 251, 251);
+        font-size: 40px;
+    }
+
+    #mask1,
+    #mask2,
+    #mask3,
+    #mask4 {
+        display: none;
+        width: 70px;
+        height: 70px;
+        background-color: rgb(245, 244, 244);
+        opacity: 0.5;
+        position: absolute;
+        left: -2px;
+        top: 0px;
+    }
+
+
+
+    #box1-1-1 {
+        width: 100%;
+        height: 600px;
+        border: 1px solid rgb(249, 249, 249);
+        position: absolute;
+        left: 500px;
+        top: -40px;
+        overflow: hidden;
+        display: none;
+    }
+
+    #img1_1 {
+        position: absolute;
+    }
+
+    .shi1 {
+        background-color: #d45d18;
+    }
+
+    .shi2 {
+        background-color: #F5AA02;
+
+    }
+
+    .picture {
+        width: 140px;
+        height: 120px;
+    }
+
+    .picture1 {
+        width: 140px;
+        height: 60px;
+
+    }
+
+    .end {
+        background-color: #d45d18;
+        width: 100%;
+        height: 120px;
+    }
+</style>
+
+<body>
+    <div class="top">
+        <img src="top-bj2" width="400px" height="auto">
+    </div>
+
+    <div class="search">
+        <input type="text" value="站内搜索" class="input">
+        <input type="button" value="搜索" class="input1">
+    </div>
+    <div class="container">
+        <ul class="nav1">
+            <li>首页
+                <ul class="nav2">
+                    <li>首页</li>
+                </ul>
+            </li>
+            <li>中心简介
+                <ul class="nav2">
+                    <li>部门设置</li>
+                    <li>中心任务</li>
+                </ul>
+            </li>
+            <li>中心动态
+                <ul class="nav2">
+                    <li>最新通知</li>
+                    <li>中心动态</li>
+                </ul>
+            </li>
+            <li>教师培训
+                <ul class="nav2">
+                    <li>基础课程培训</li>
+                    <li>专业课程培训</li>
+                    <li>教师技能培训</li>
+                    <li>教师技能培训</li>
+                </ul>
+            </li>
+            <li>教学研究
+                <ul class="nav2">
+                    <li>科研项目</li>
+                    <li>教学成果</li>
+                    <li>教学研讨会</li>
+                </ul>
+            </li>
+            <li>资源中心
+                <ul class="nav2">
+                    <li>校内资源</li>
+                    <li>校外资源</li>
+                    <li>慕课资源</li>
+                    <li>其他资源</li>
+                </ul>
+            </li>
+            <li>咨询服务
+                <ul class="nav2">
+                    <li>咨询服务</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="box">
+        <a href="javascript:;" class="prev"> &lt;</a>
+        <a href="javascript:;" class="next"> &gt;</a>
+        <ul class="images" class="width">
+            <li><a href="#"><img src="banner1.jpg" alt="轮播图图片"></a></li>
+            <li><a href="#"><img src="banner2.jpg" alt="轮播图图片"></a></li>
+            <li><a href="#"><img src="banner3.jpg" alt="轮播图图片"></a></li>
+            <li><a href="#"><img src="banner4.jpg" alt="轮播图图片"></a></li>
+        </ul>
+        <ul class="dots">
+        </ul>
+    </div>
+
+    <div style="position: absolute;top: 540px;left: 100px;width: 400px;">
+        <div id="title" style="width: 800px;font-size: 26px;height: 40px;line-height: 38px;">
+            <div id="pri" class="selected" onclick="showInfo('primary')">水调歌头</div>
+            <div id="jun" class="unselect" onclick="showInfo('junior')">满江红·写怀</div>
+
+        </div>
+        <div id="content" style="width: 400px;background-color:transparent;padding-top: 10px;">
+            <div id="primary" style="display: block;">
+                <p>明月几时有？把酒问青天。</p>
+                <p>不知天上宫阙，今夕是何年。</p>
+                <p>我欲乘风归去，又恐琼楼玉宇，高处不胜寒。</p>
+                <p>起舞弄清影，何似在人间？</p>
+                <p>转朱阁，低绮户，照无眠。</p>
+                <p>不应有恨，何事长向别时圆？</p>
+            </div>
+            <div id="junior" style="display: none;">
+                <p>怒发冲冠，凭栏处、潇潇雨歇</p>
+                <p>抬望眼、仰天长啸，壮怀激烈。</p>
+                <p>三十功名尘与土，八千里路云和月。</p>
+                <p>莫等闲、白了少年头，空悲切。</p>
+                <p>靖康耻，犹未雪。臣子恨，何时灭。</p>
+                <p>驾长车，踏破贺兰山缺。</p>
+            </div>
+        </div>
+    </div>
+
+    <body>
+        <div id="box1">
+            <div id="box1-1">
+                <img src="img1.jpg" id="img1">
+            </div>
+            <div id="box1-2">
+                <div class="btn0"><span>
+
+                </div>
+
+                <div id="btn1" class="btn" onmouseover="moimg('img1.jpg',this);" onmouseout="imgStart2(this)">
+                    <img src="img1.jpg" alt="" class="img2">
+                    <div id="mask1" class="mask"></div>
+                </div>
+                <div id="btn2" class="btn" onmouseover="moimg('img2.jpg',this);" onmouseout="imgStart2(this)">
+                    <img src="img2.jpg" alt="" class="img2">
+                    <div id="mask2" class="mask"></div>
+                </div>
+                <div id="btn3" class="btn" onmouseover="moimg('img3.jpg',this);" onmouseout="imgStart2(this)">
+                    <img src="img3.jpg" alt="" class="img2">
+                    <div id="mask3" class="mask"></div>
+                </div>
+                <div id="btn4" class="btn" onmouseover="moimg('img4.jpg',this);" onmouseout="imgStart2(this)">
+                    <img src="img4.jpg" alt="" class="img2">
+                    <div id="mask4" class="mask"></div>
+                </div>
+
+                <div class="btn0"><span></span></div>
+            </div>
+        </div>
+        <div style="position: absolute;top: 545px;left: 810px;width: 300px;">
+            <div style="width: 300px;font-size: 26px;height: 40px;line-height: 38px;" class="shi1">春晓</div>
+            <p>春眠不觉晓</p>
+            <p>处处闻啼鸟</p>
+            <p>夜来风雨声</p>
+            <p>花落知多少</p>
+            <div style="width: 300px;font-size: 26px;height: 40px;line-height: 38px;" class="shi2">夜雨寄北</div>
+            <div style="width: 300px;font-size: 26px;height: 40px;line-height: 38px;" class="shi2">清明</div>
+        </div>
+        <div style="position: absolute;top: 800px;left: 150px;">
+            <table>
+                <tr>
+                    <td><img src="1.jpg" class="picture"></td>
+                    <td><img src="2.jpg" class="picture"></td>
+                    <td><img src="3.jpg" class="picture"></td>
+                    <td><img src="4.jpg" class="picture"></td>
+                </tr>
+            </table>
+        </div>
+        <div style="position: absolute;top: 800px;left: 730px;">
+            <table>
+                <tr>
+                    <td><img src="dog 1.jpg" class="picture1"></td>
+                    <td><img src="dog 2.jpg" class="picture1"></td>
+                </tr>
+                <tr>
+                    <td><img src="dog 3.jpg" class="picture1"></td>
+                    <td><img src="dog 4.jpg" class="picture1"></td>
+                </tr>
+            </table>
+        </div>
+        <div style="position: absolute;top: 950px;left: 0px;" class="end">
+
+            <table>
+                <tr>
+                    <td width="800px"><img src="up.png" width="400px" height="120px"></td>
+                    <td width="800px">
+                        <p>联系电话：137976707017</p>
+                        <p>地址：河南省开封市河南大学金明校区</p>
+                        <p>技术支持：河南大学107网站工作室</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </body>
+</body>
+<script>
+    window.addEventListener('load', function () {
+        var slideIndex = 0;
+        var circle = 0;
+        var dots = document.querySelector('.dots');
+        var images = document.querySelector('.images');
+        var box = document.querySelector('.box')
+        var box_width = box.offsetWidth;
+        var prev = document.querySelector(".prev")
+        var next = document.querySelector(".next")
+        prev.addEventListener("click", function () {
+            if (slideIndex == 0) {
+                slideIndex = images.children.length - 1
+                images.style.left = -slideIndex * box_width + 'px';
+            }
+            slideIndex--;
+            animate(images, -slideIndex * box_width)
+            circle--;
+            circle = circle < 0 ? dots.children.length - 1 : circle;
+            circleChange();
+        });
+        next.addEventListener("click", function () {
+            if (slideIndex == images.children.length - 1) {
+                images.style.left = 0;
+                slideIndex = 0;
+            }
+            slideIndex++;
+            animate(images, -slideIndex * box_width);
+            circle++;
+            if (circle == dots.children.length) {
+                circle = 0;
+            }
+            circleChange();
+        });
+
+        var dots = document.querySelector('.dots');
+        for (var i = 0; i < images.children.length; i++) {
+            var li = document.createElement('li');
+            li.setAttribute('index', i);
+            dots.appendChild(li);
+            li.addEventListener('click', function () {
+                for (var i = 0; i < dots.children.length; i++) {
+                    dots.children[i].className = ' ';
+                }
+                this.className = 'active';
+                var index = this.getAttribute('index');
+                slideIndex = index;
+                circle = index;
+                animate(images, -slideIndex * box_width);
+            })
+        }
+        dots.children[0].className = 'active';
+        var first = images.children[0].cloneNode(true);
+        images.appendChild(first);
+
+
+        function circleChange() {
+            for (var i = 0; i < dots.children.length; i++) {
+                dots.children[i].className = '';
+            }
+            dots.children[circle].className = 'active';
+        }
+
+
+        var timer = setInterval(function () {
+            next.click();
+        }, 3000);
+
+
+        box.addEventListener('mouseenter', function () {
+            clearInterval(timer);
+            timer = null;
+        });
+
+        box.addEventListener('mouseleave', function () {
+            timer = setInterval(function () {
+
+                next.click();
+            }, 3000);
+        });
+
+
+        function animate(obj, target, callback) {
+
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
+                var step = (target - obj.offsetLeft) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.offsetLeft == target) {
+
+                    clearInterval(obj.timer)
+                    if (callback) {
+                        callback();
+                    }
+                }
+                obj.style.left = obj.offsetLeft + step + 'px';
+            }, 15);
+        }
+
+        next.click();
+    })
+</script>
+<script type="text/javascript">
+    function showInfo(objId) {
+        if (objId == "junior") {
+            document.getElementById("pri").className = "unselect";
+            document.getElementById("jun").className = "selected";
+            document.getElementById("primary").style.display = "none";
+            document.getElementById("junior").style.display = "block";
+        } else if (objId == "senior") {
+            document.getElementById("pri").className = "unselect";
+            document.getElementById("jun").className = "unselect";
+            document.getElementById("primary").style.display = "none";
+            document.getElementById("junior").style.display = "none";
+        }
+    }
+</script>
+<script>
+    var imgc = 5;
+    var imgm = 8;
+    var flag = 1;
+    var tm;
+
+    var box1_1 = document.getElementById('box1-1');
+    var imgMask = document.getElementById('imgmask1');
+    var box1_1_1 = document.getElementById('box1-1-1');
+    var img1_1 = document.getElementById('img1_1');
+
+
+    function changeMask(cIndex) {
+        for (var i = 1; i <= 4; i++) {
+            var mask = document.getElementById('mask' + i);
+            mask.style.display = "none";
+        }
+        var index = cIndex - 4;
+        var mask = document.getElementById('mask' + index);
+        mask.style.display = "block";
+
+    }
+
+
+    function cgimg() {
+        if (flag === 0) return;
+        changeMask(imgc);
+        var img1 = document.getElementById('img1');
+        img1.src = "../image/" + imgc + ".jpg";
+
+
+        img1_1.src = "../image/" + imgc + ".jpg";
+
+        imgc++;
+        if (imgc > imgm) imgc = 5;
+        tm = window.setTimeout(cgimg, 2000);
+    }
+
+
+    function imgStop() {
+        flag = 0;
+        changeMask(imgc);
+        window.clearTimeout(tm);
+    }
+    function imgStop1() {
+        flag = 0;
+        var box1_1 = document.getElementById('box1-1');
+        box1_1.style.cursor = "pointer";
+        changeMask(imgc - 1);
+        window.clearTimeout(tm);
+    }
+
+
+    function imgStart() {
+        flag = 1;
+        tm = window.setTimeout(cgimg, 2000);
+        changeMask(imgc);
+    }
+
+    function imgStart2(obj) {
+        flag = 1;
+        tm = window.setTimeout(cgimg, 2000);
+        obj.style.border = "none";
+    }
+    function imgStart3(obj) {
+        flag = 1;
+        tm = window.setTimeout(cgimg, 2000);
+        obj.style.border = "none";
+    }
+
+
+    function moimg(imgurl, obj) {
+        window.clearTimeout(tm);
+        var img1 = document.getElementById('img1');
+        img1.src = imgurl;
+        for (var i = 1; i <= 4; i++) {
+            var mask = document.getElementById('mask' + i);
+            mask.style.display = "none";
+            var btn = document.getElementById('btn' + i);
+            btn.style.border = "none";
+        }
+        obj.style.border = "2px solid red";
+
+    }
+
+
+    cgimg();
+
+
+    box1_1.onmouseover = function () {
+        imgStop1();
+        imgMask.style.display = "block";
+        box1_1_1.style.display = "block";
+    }
+
+    box1_1.onmousemove = function big(event) {
+        var maskX = event.clientX - box1_1.offsetLeft - imgMask.offsetWidth;
+        var maskY = event.clientY - box1_1.offsetTop - imgMask.offsetHeight;
+        var maskMaxX = box1_1.offsetWidth - imgMask.offsetWidth;
+        var maskMaxY = box1_1.offsetHeight - imgMask.offsetHeight;
+        if (maskX < 0) {
+            maskX = 0;
+        } else if (maskX > maskMaxX) {
+            maskX = maskMaxX;
+        }
+        if (maskY < 0) {
+            maskY = 0;
+        } else if (maskY > maskMaxY) {
+            maskY = maskMaxY;
+        }
+        imgMask.style.left = maskX + "px";
+        imgMask.style.top = maskY + "px";
+        var bigImgMax = img1_1.offsetWidth - box1_1_1.offsetWidth;
+        var bigImgX = maskX * bigImgMax / maskMaxX;
+        var bigImgY = maskY * bigImgMax / maskMaxY;
+        img1_1.style.left = -bigImgX + "px";
+        img1_1.style.top = -bigImgY + "px";
+    }
+
+    box1_1.onmouseout = function () {
+        imgStart();
+        imgMask.style.display = "none";
+        box1_1_1.style.display = "none";
+    }
+</script>
+
+</html>
+
+</html>
