@@ -1,0 +1,123 @@
+.header {
+    background-color: #FFFFFF;
+    border-bottom: 2px solid #B3174B; 
+}
+
+.header a{
+    color: #797979;
+}
+
+.header-img {
+    width: 100%; 
+    height: auto; 
+    display: block;
+}
+
+.active{
+    background-color: #B3174B;
+    border-radius: 5px;
+    color: #FFFFFF;
+
+}
+
+.fullwidthbanner{
+    background-color: aqua;
+    height: 700px;
+    width: 100%;
+}
+
+.heading-title{
+    color: black;
+}
+
+.list a{
+    color: #B3174B;
+}
+
+.list li {
+    padding: 10px 0; 
+    border-bottom: 1px solid #ccc; 
+}
+
+.list a:hover{
+    color: #B3174B;
+    text-decoration-color: #B3174B;
+    text-decoration: underline;
+}
+
+.newsbox {
+    margin: 0;
+    padding: 0;
+}
+
+.newsbox figure {
+    margin: 0;
+    padding: 0;
+}
+
+.newsbox time {
+    display: block;
+    text-indent: 12px;
+    color: rgb(255, 255, 255);
+    background: rgb(182, 18, 74);
+    padding: 5px 0px;
+    text-align: center;
+    margin: 0;
+}
+
+.newsbox time a {
+    color: white;
+    text-align: center;
+}
+
+.newsbox time a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.box_inner {
+    display: block;
+    text-indent: 12px;
+    background-color: #DDDDDD;
+    margin: 0;
+    padding: 0;
+}
+
+.box_inner:hover{
+    display: block;
+    text-indent: 12px;
+    background-color: #777777;
+    margin: 0;
+    padding: 0;
+}
+
+.box_inner a{
+    color: black;
+    text-align: center;
+}
+
+.box_inner a:hover{
+    text-decoration: underline;
+}
+
+.newsbox img {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.panel-body a{
+    color: #777777;
+}
+
+.foot{
+    display: block;
+    background-color: black;
+    height: 75px;
+}
+
+.panel-body a:hover{
+    color: white;
+    text-decoration: underline;
+}
+
