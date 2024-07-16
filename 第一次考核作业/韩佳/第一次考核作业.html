@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第一次考核作业</title>
+
+    <style>
+        body{background-color: #2FA37E;width: 100%; height: 100%;}
+        body{
+            background-image: url(bg_reg_wave.png);
+            background-attachment: scorll;
+            background-repeat: no-repeat;
+            background-position: 50% 10%;
+        }
+        
+    </style>
+    <style type = "text/css">
+        img{
+            position:absolute;
+            left:440px;
+            top:85px;
+        }
+        img{
+            position: absolute;
+            left:450px;
+            top:70px;
+        }
+       
+    </style>
+   <style>
+    .container{
+    width:650px;
+    height: 520px;
+    background:white;
+    margin:250px 230px;
+    display: flex;
+    flex-direction: column;
+   }
+   .all{
+        display: flex;
+        justify-content: space-between;
+        height: 300px;
+        
+    }
+   .dibu{
+    height: 200px;
+    background-color: black;
+    }
+    
+   h1{
+    margin-bottom: 5px;
+    padding-left: 145px;
+
+   }
+   input[type="text"],
+   input[type="password"]{
+    width:60%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border:1px solid #ccc;
+    border-radius: 1px;
+   }
+   input[type = "submit"]{
+    width:63%;
+    padding: 10px;
+    background-color: #30A37F;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    
+    
+   }
+   .zhuce{
+    padding-left: 260px;
+    margin-bottom: 30px;
+   }
+   .forget-password{
+    padding-left:10px;
+    
+   }
+   h3{
+    margin-bottom: -17px;
+    padding-left: 459px;
+   }
+   
+   .right{
+    position: absolute;
+    left: 700px;
+    top:350px;
+    width: 50%;
+    height: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+   }
+   .left{
+    
+    
+    width: 300px;
+    height: 300px;
+
+   }
+   .box::after{
+    content: "";
+    display: block;
+    clear: both;
+   }
+   .disanfang{
+    position: absolute;
+    top: 590px;
+    left: -60px;
+   }
+   .disanfang1{
+    position: absolute;
+    top:590px;
+    left: 50px;
+   }
+   .disanfang2{
+    position: absolute;
+    top:630px;
+    left: 350px;
+   }
+   .disanfang3{
+    position: absolute;
+    top:700px;
+    left: 400px;
+   }
+   .disanfang4{
+    position: absolute;
+    top:700px;
+    left: 500px;
+   }
+   .shiyanshi{
+    position: absolute;
+    top: 620px;
+    left: 240px;
+
+   }
+   .shiyanshi1{
+    position: absolute;
+    top: 660px;
+    left: 700px;
+   }
+   .bottom1{
+    position: absolute;
+    top: 800px;
+    left: -350px;
+   }
+   .bottom2{
+    position: absolute;
+    top: 870px;
+    left: -300px;
+   }
+   .bottom3{
+    position: absolute;
+    top: 870px;
+    left: -250px;
+   }
+   .bottom4-left{
+    margin-top: 1px;
+    position: absolute;
+    top: 830px;
+    left: 350px;
+    width: 500px;
+    height: auto;
+    margin-bottom: 1px;
+   }
+   h4{
+    margin-top: 1px;
+    position: absolute;
+    top: 840px;
+    left: 350px;
+    width: 500px;
+    height: auto;
+    margin-bottom: 1px;
+   }
+   .bottom4-right{
+    margin-top: 1px;
+    position: absolute;
+    top: 830px;
+    left: 600px;
+    width: 500px;
+    height: auto;
+    margin-bottom: 1px;
+   }
+   h5{
+    margin-top: 1px;
+    position: absolute;
+    top: 840px;
+    left: 600px;
+    width: 500px;
+    height: auto;
+    margin-bottom: 1px;
+   }
+   .bottom5{
+    margin-top: 1px;
+    position: absolute;
+    top: 895px;
+    left: 900px;
+    width: 500px;
+    height: auto;
+    margin-bottom: 1px;
+   }
+   .bottom6{
+    margin-top: 1px;
+    position: absolute;
+    top: 830px;
+    left: 865px;
+    width: 500px;
+    height: auto;
+    margin-bottom: 1px;
+   }
+   h6{
+    margin-top: 1px;
+    position: absolute;
+    top: 840px;
+    left: 865px;
+    width: 500px;
+    height: auto;
+    margin-bottom: 1px;
+   }
+   .pic1{
+    margin-top: 1px;
+    position: absolute;
+    top: 865px;
+    left: 420px;
+    width: 500px;
+    height: auto;
+    margin-bottom: 1px;
+   }
+   .pic2{
+    margin-top: 1px;
+    position: absolute;
+    top: 830px;
+    left: 420px;
+    width: 500px;
+    height: auto;
+    margin-bottom: 1px;
+   }
+   .pic3{
+    margin-top: 1px;
+    position: absolute;
+    top: 890px;
+    left: 420px;
+    width: 500px;
+    height: auto;
+    margin-bottom: 1px;
+   }
+   .pic4{
+    margin-top: 1px;
+    position: absolute;
+    top: 890px;
+    left: 455px;
+    width: 500px;
+    height: auto;
+    margin-bottom: 1px;
+   }
+   .pic5{
+    margin-top: 1px;
+    position: absolute;
+    top: 800px;
+    left: 550px;
+    width: 500px;
+    height: auto;
+    margin-bottom: 1px;
+   }
+   .pic6{
+    margin-top: 1px;
+    position: absolute;
+    top: 900px;
+    left: 1009px;
+    width: 5px;
+    height: auto;
+    margin-bottom: 1px;
+   }
+   </style>
+   
+   
+</head>
+<body>
+    <img src="logo.png" width="200px" height="auto">
+    <div class="all">
+        <div class="left">
+            <div class="container">
+                <h1>107LAB登录</h1>
+                <h3>107实验室帮助</h3>
+                <form>
+                    <div class="zhuce">
+                        <a><font color="#777777">还没有注册吗？</font><font color="#30A37F">去注册</font></a>
+                    </div>
+                    &nbsp;&nbsp;&nbsp;<input type = "text" placeholder="请输入您的邮箱地址或手机号">
+                    <p>&nbsp;&nbsp;&nbsp;<input type="password" placeholder="请输入密码"></p>
+                    &nbsp;&nbsp;&nbsp;<input type="submit" value = "登录">
+                    <p>
+                        <div class="forget-password">
+                            <a><font color="#30A37F"><span style="font-size: 14px">使用手机验证码登录</span></font></a>
+                            <a><font color="#30A37F"><span style="font-size: 14px">&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;忘记密码</span></font></a>
+                        </div>
+                    </p>  
+                </form>
+            </div>
+        </div>
+        <div class="right">
+            
+                <p><font color="#30A37F"><span style="font-size: 14px">来自习，好的学习环境</span></font></p>
+                <p><font color="#30A37F"><span style="font-size: 14px">来旅游，好的娱乐氛围</span></font></p>
+                <p><font color="#30A37F"><span style="font-size: 14px">去挑战，无尽的乐趣</span></font></p>
+                <p><font color="#30A37F"><span style="font-size: 14px">去攀登，超越自我</span></font></p>
+                <p><font color="#30A37F"><span style="font-size: 14px">去坚持，汗水浇灌希望</span></font></p>
+                <p><font color="#30A37F"><span style="font-size: 14px">明德新民，止于至善</span></font></p>
+                <p><font color="#30A37F"><span style="font-size: 14px">上善若水，水润利万物</span></font></p>
+            
+        </div>
+    
+        <div class="bottom">
+            <div class="disanfang">
+                <img src="qq.png" width="40px" height="40px">
+            </div>
+            <div class="disanfang1">
+                <img src="github.png" width="40px" height="40px">
+            </div>
+            <div class="disanfang2">
+                <font color="#777777"><span style="font-size: 14px">————或使用第三方登录—————</span></font>
+            </div>
+            <div class="disanfang3">
+                <font color="#777777"><span style="font-size: 14px">QQ</span></font>
+            </div>
+            <div class="disanfang4">
+                <font color="#777777"><span style="font-size: 14px">GitHub</span></font>
+            </div>
+            <div class="shiyanshi">
+                <h3>实验室相关</h3>
+            </div>
+            <div class="shiyanshi1">
+                <p><font color="#30A37F"><span style="font-size: 14px">高配的电脑</span></font></p>
+                <p><font color="#30A37F"><span style="font-size: 14px">专业的技术</span></font></p>
+            </div>
+        </div>
+        <div style="background-color: #2F2F2F;position: absolute;
+        top: 135%;width: 100%;height: 300px;"></div>
+        <div class="bottom1">
+            <img src="logo.png" width="200px" height="auto">
+        </div>
+        <div class="bottom2">
+            <img src="tracup.png" width="50px" height="auto">
+        </div>
+        <div class="bottom3">
+            <img src="frontjs.png" width="50px" height="auto">
+        </div>
+        <h4><font color = "white"><span style="font-size: 14px">关于我们</span></font></h4>
+        <div class="bottom4-left">
+            
+            <p><font color = "#2FA37E"><span style="font-size: 14px">——</span></font></p>
+            <p><font color = "#777777"><span style="font-size: 14px">单人单桌&nbsp;&nbsp;&nbsp;一起聚餐</span></font></p>
+            <p><font color = "#777777"><span style="font-size: 14px">配备电脑&nbsp;&nbsp;&nbsp;一起唱歌</span></font></p>
+            <p><font color = "#777777"><span style="font-size: 14px">两台大空调&nbsp;&nbsp;&nbsp;一起旅行</span></font></p>
+            <p><font color = "#777777"><span style="font-size: 14px">冬暖夏凉&nbsp;&nbsp;&nbsp;互帮互助</span></font></p>
+            <p><font color = "#777777"><span style="font-size: 14px">还不快来&nbsp;&nbsp;&nbsp;来就对了</span></font></p>
+        </div>
+        <h5><font color = "white"><span style="font-size: 14px">服务技能</span></font></h5>
+        <div class="bottom4-right">
+            
+            <p><font color = "#2FA37E"><span style="font-size: 14px">——</span></font></p>
+            <p><font color = "#777777"><span style="font-size: 14px">学院官网&nbsp;&nbsp;&nbsp;主学技能</span></font></p>
+            <p><font color = "#777777"><span style="font-size: 14px">专题网站&nbsp;&nbsp;&nbsp;HTML</span></font></p>
+            <p><font color = "#777777"><span style="font-size: 14px">公司官网&nbsp;&nbsp;&nbsp;CSS</span></font></p>
+            <p><font color = "#777777"><span style="font-size: 14px">信息管理系统&nbsp;&nbsp;&nbsp;JavaScript</span></font></p>
+            <p><font color = "#777777"><span style="font-size: 14px">有偿服务&nbsp;&nbsp;&nbsp;PHP</span></font></p>
+        </div>
+        <h6><font color = "white"><span style="font-size: 14px">选择语言</span></font></h6>
+        <div class="bottom5">
+            <font color = "#777777"><span style="font-size: 14px;">中文</span></font>
+            <p><font color = "#777777"><span style="font-size: 14px;">English</span></font></p>
+
+        </div>
+        <div class="bottom6">
+            <p><font color = "#2FA37E"><span style="font-size: 14px">——</span></font></p>
+        </div>
+        <div class="pic1">
+            
+            <p><img src="language_english.png" width="20px" height="auto"></p>
+        </div>
+        <div class="pic2">
+            <img src="language_chinese.png" width="20px" height="auto">
+        </div>
+        <div class="pic3">
+            <img src="weixin.png" width="30px" height="auto">
+        </div>
+        <div class="pic4">
+            <img src="zhihu.png" width="30px" height="auto">
+        </div>
+        <div style="background-color: #00C2F0;position: absolute;
+        top: 865px;left: 1000px;width: 30px;height: 150px;"></div>
+        <div class="pic5">
+            <img src="zixun.png" width="30px" height="auto">
+        </div>
+        
+        <div class="pic6">
+            <font color="white"><span style="font-size: 14px;">咨询·建议</span></font>
+        </div>
+        
+    </div>
+        
+    
+</body>
+</html>
